@@ -6,9 +6,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.youtube_java.R;
 
 public class VideoPlayerActivity extends AppCompatActivity {
