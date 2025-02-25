@@ -74,9 +74,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageview);
             textView = itemView.findViewById(R.id.title);
-            channelName = itemView.findViewById(R.id.channel_name);
-            viewsCount = itemView.findViewById(R.id.views_count);
-            publishTime = itemView.findViewById(R.id.publish_time);
             channelAvatar = itemView.findViewById(R.id.channel_avatar);
             moreOptions = itemView.findViewById(R.id.more_options);
         }
