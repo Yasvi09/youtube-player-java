@@ -7,18 +7,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.example.youtube_java.R;
-import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.example.youtube_java.R;
+import com.squareup.picasso.Picasso;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
     Context context;
     ArrayList<Model> list;
+    Random random = new Random();
+
 
     public Adapter(Context context, ArrayList<Model> model){
         this.context = context;
@@ -28,6 +32,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         View itemview = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
         return new MyViewHolder(itemview);
     }
@@ -47,6 +52,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
                 context.startActivity(intent);
             }
         });
+
     }
 
     @Override
@@ -54,14 +60,25 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
         return list.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+
         public ImageView imageView;
         public TextView textView;
+        public TextView channelName;
+        public TextView viewsCount;
+        public TextView publishTime;
+        public ImageView channelAvatar;
+        public ImageView moreOptions;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageview);
             textView = itemView.findViewById(R.id.title);
+            channelName = itemView.findViewById(R.id.channel_name);
+            viewsCount = itemView.findViewById(R.id.views_count);
+            publishTime = itemView.findViewById(R.id.publish_time);
+            channelAvatar = itemView.findViewById(R.id.channel_avatar);
+            moreOptions = itemView.findViewById(R.id.more_options);
         }
     }
 }
